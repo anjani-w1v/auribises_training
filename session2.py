@@ -47,3 +47,4 @@ john_marks = 70, 80, 85    #tuple-immutable-u cannot modify data | READ ONLY
 print(john_marks, id(john_marks), type(john_marks)) 
 
 
+#hejjjjj
