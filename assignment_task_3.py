@@ -1,16 +1,45 @@
+
+
 #task---------------------------------------------------------
 # Identify the use cases where u see references copy opertains.
 
-
-
+# ans - ATM, mobile app, and website reference the same bank account. we can withdraw in many ways
+#       Application works with the same database record.
 
 
 
 #task---------------------------------------------------------
 # code (zomaao) screen
 
+coupons = {
+    "coupon_code": "Have a coupon code? Type here",
+    "restaurant_coupon": {
+        "title": "Flat ₹100 OFF",
+        "coupon_code": "GET100",
+        "discount": 100,
+        "description": "Save ₹100.00 with this code",
+        "selected": True
+    },
 
+    "payment_coupons": [
+        {
+            "title": "5% OFF upto ₹30 using BHIM Payments App",
+            "coupon_code": "BHIMAPP",
+            "discount": "5% upto ₹30",
+            "description": "Save ₹30.00 with this code",
+            "selected": False
+        },
+        {
+            "title": "10% OFF upto ₹100 using Utkarsh Small Finance Bank Debit Cards",
+            "coupon_code": "UTKARSH",
+            "discount": "10% upto ₹100",
+            "description": "Save ₹89.60 with this code",
+            "selected": False
+        }
+    ],
+}
 
+print(coupons["restaurant_coupon"]["title"])
 
 
 
