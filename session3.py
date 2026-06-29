@@ -34,15 +34,3 @@ print(numbers)   #[10, 100, 30, 40, 50].  [10, 20, 30, 40, 50].
 
 
 
-
-
-# coupons = [
-#     'restaurant_coupons': {
-#         : {
-            
-#         }
-#     }
-# ]
-# chat_message = [
-    
-# ]
