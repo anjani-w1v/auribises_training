@@ -129,35 +129,71 @@
 
 
 
-data = 11                       # 0 0 0 0 1 0 1 1
-result = data >> 3              # 0 0 0 0 0 0 0 1 ----- 0 1 1
-print('result:', result)        # 1
+# data = 11                       # 0 0 0 0 1 0 1 1
+# result = data >> 3              # 0 0 0 0 0 0 0 1 ----- 0 1 1
+# print('result:', result)        # 1
 
-print('~~~~~~~~~~~~~~~~~')
+# print('~~~~~~~~~~~~~~~~~')
 
-data = -11
-result = data >> 3
-print('result:', result) 
-"""
+# data = -11
+# result = data >> 3
+# print('result:', result) 
+# """
 
- 11:  0 0 0 0 1 0 1 1
--11:  1 1 1 1 0 1 0 0  1s complement
-                  + 1  2s complement
+#  11:  0 0 0 0 1 0 1 1
+# -11:  1 1 1 1 0 1 0 0  1s complement
+#                   + 1  2s complement
 
--11 >> 3
+# -11 >> 3
 
-     1 1 1 1 0 1 0 0 >> 3
-     _ _ _ 1 1 1 1 0 --- 1 0 0
-     1 1 1 1 1 1 1 0 --- 1 0 0
-     0 0 0 0 0 0 0 1
-                   1
-     0 0 0 0 0 0 1 0 -> -2
-"""      
+#      1 1 1 1 0 1 0 0 >> 3
+#      _ _ _ 1 1 1 1 0 --- 1 0 0
+#      1 1 1 1 1 1 1 0 --- 1 0 0
+#      0 0 0 0 0 0 0 1
+#                    1
+#      0 0 0 0 0 0 1 0 -> -2
+# """      
 
-data = -13
-result = data >> 2
-print('result:', result) 
+# data = -13
+# result = data >> 2
+# print('result:', result) 
 
 # Assignment -> explore below
 # AES, SHA-256 etc are the security algorithms 
 # which uses shifts and bitwise operations
+
+
+
+
+# Conditional Constructs
+# if else
+# if elif else
+# nested if else
+
+# https://peps.python.org/pep-0008/
+# How to write effective code in python following standards
+
+email = 'admin@example.com'
+password = 'admin123'
+
+user_email = input('Enter Email to Login: ')
+user_password = input('Enter Password to Login: ')
+
+# regular/simple if/else
+
+if user_email == email and user_password == password:
+    print('Login is Successful')
+else:
+    print('Invalid Credentials. Either email or password is incorrect')
+
+
+# nested if/else
+"""
+if user_email == email:
+    if user_password == password:
+        print('Login Success')
+    else:
+        print('Login Failed: Invalid Password')
+else:
+    print('Login Failed: Invalid Email')
+"""
