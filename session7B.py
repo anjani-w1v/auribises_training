@@ -63,9 +63,9 @@ def search(flights, code):
         print('No Matching Flight Found for code', code)
 
 
-def main():
+def main():           #why we write this cz in sessin7C when imprting sessin7B it execute the bew 2 search functins as t avid this we put these functin in main s when in sessin&C nw ny fights wi run
     search(flights, 'AI2973')
     search(flights, 'AI1201')
 
-if __name__ == '__main__':
+if __name__ == '__main__':        #must t write this if u manuay write main funcin ike abve 
     main()
