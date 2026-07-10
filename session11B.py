@@ -17,10 +17,27 @@ file = open('Session10B.py', 'r')
 lines = file.readlines()
 
 for line in lines:
-    pass
+    if "Vehicle(" in line:
+        objects["Vehicle"] += 1
+
+    if "FastTag(" in line:
+        objects["FastTag"] += 1
+
+    if "TollPlazaQueue(" in line:
+        objects["TollPlazaQueue"] += 1
 
 
 with open('objectanalysis.csv', 'a') as file:
     for key in objects:
         data = f'{key},{objects[key]}\n'
         file.write(data)
+
+
+
+# count=0
+    # if object:
+    #     count=+1
+    # print(count)
+
+# file = open('objectanalysis.txt', 'w')
+# write=input('Enter: ')
