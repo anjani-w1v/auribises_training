@@ -8,24 +8,19 @@
 """
 
 from pymongo import MongoClient
-from pymongo.server_api import ServerApi
+uri = "mongodb+srv://anjaniyt5_db_user:a22@cluster0.5oqijo8.mongodb.net/?appName=Cluster0"
+client = MongoClient(uri)
+try:
+    client.admin.command("ping")
+    print("Connected successfully")
 
-uri = "mongodb+srv://anjani_db_user:iX1ZYu0Qvonrpzzx@cluster0.wefndkw.mongodb.net/?appName=Cluster0"
-
-# Create a new client and connect to the server
-client = MongoClient(uri, server_api=ServerApi('1'))
-
-# Send a ping to confirm a successful connection
-# try:
-#     client.admin.command('ping')
-#     print("Pinged your deployment. You successfully connected to MongoDB!")
-# except Exception as e:
-#     print(e)
+except Exception as e:
+    raise Exception(
+        "The following error occurred: ", e)
 
 
 
 #access the database
-db=client['sample_mflix']
+db=client['anjani_m_db']
 names=db.list_collection_names()
 print(names)
-

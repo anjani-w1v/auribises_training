@@ -1,6 +1,6 @@
 class FileHelper:
 
-    def __init__(self, file_name='user1.csv'):
+    def __init__(self, file_name='users.csv'):
         self.file = open(file_name, 'a')
 
     def write_in_file(self, data):

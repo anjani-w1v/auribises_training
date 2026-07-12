@@ -3,13 +3,13 @@ from pymongo.server_api import ServerApi
 
 class DBHelper:
 
-    def __init__(self, db_name='user1'):
-        uri = "mongodb+srv://atpl:atpl@cluster0.eh8zx.gcp.mongodb.net/?appName=Cluster0"
+    def __init__(self, db_name='anjani_m_db'):
+        uri = "mongodb+srv://anjaniyt5_db_user:a22@cluster0.5oqijo8.mongodb.net/?appName=Cluster0"
         self.client = MongoClient(uri, server_api=ServerApi('1'))
         self.db = self.client[db_name]
         print('[DBHelper] Connection Created')
 
-    def select_collection(self, collection_name='user1'):
+    def select_collection(self, collection_name='users'):
         self.collection = self.db[collection_name]
         print('[DBHelper] Collection Selected:"', collection_name)
 
