@@ -9,7 +9,7 @@ def main():
             bank='SBI', 
             balance=500)
 
-    vehicle1 = Vehcile(
+    vehicle1 = Vehcile(p
         registration_number='PB10AL2937', 
         type='4W', 
         fasttag=fasttag1
@@ -73,13 +73,13 @@ def main():
     queue.show()
 
     # After adding Vehcile in Queue, deduc the toll
-    queue.deduct_toll(vehicle1)
-    queue.deduct_toll(vehicle2)
-    queue.deduct_toll(vehicle3)
-    queue.deduct_toll(vehicle4)
-    queue.deduct_toll(vehicle5)
+    # queue.deduct_toll(vehicle1)
+    # queue.deduct_toll(vehicle2)
+    # queue.deduct_toll(vehicle3)
+    # queue.deduct_toll(vehicle4)
+    # queue.deduct_toll(vehicle5)
 
-    print(f'Size of Queue is: {queue.size}')
+    # print(f'Size of Queue is: {queue.size}')
 
     # Assignment: Write the Logic, if balance is low, highlight the vehcile 
     # and do not remove from queue

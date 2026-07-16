@@ -1,74 +1,45 @@
-class TollPlazaQueue:
+"""
+    DSA - 3 questions a day (Competitive Platform)
+    Design Patterns - https://refactoring.guru/design-patterns
+    SOLID Principles - https://www.designgurus.io/course-play/grokking-solid-design-principles/doc/solid-design-principles
+"""
+
+# Vehicle: registration_number, type, fasttag
+# FastTag: fasttag_id, bank, balance
+
+# 1 Vehicle has 1 FastTag
+
+class FastTag:
     
-    def __init__(self):
-        self.head = None    # for queue term is front
-        self.tail = None    # for queue term is end
-        self.size = 0
-        print('[TollPlazaQueue] [init] Queue Constrcuted', self)
+    def __init__(self, fasttag_id, bank, balance):
+        self.fasttag_id = fasttag_id
+        self.bank = bank
+        self.balance = balance
+
+    def show(self):
+        print('~~~~~~~~~~~FAST TAG~~~~~~~~~~~~~')
+        print(f'{self.fasttag_id} | {self.bank} | {self.balance}') # formatted string
+        print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
 
 
-    def add(self, element):
-        
-        self.size += 1
-
-        if self.head == None:
-            self.head = element
-            self.tail = element
-        else:
-            self.tail.next = element
-            self.head.previous = element
-            element.previous = self.tail
-            element.next = self.head
-            self.tail = element
-
-        print(f'Vehcile Added to Queue. Size {self.size}')
-        element.show()
-
-    def deduct_toll(self, element):
-        
-        print(f'FastTag Balance for {element.registration_number} \u20b9{element.fasttag.balance}')        
-        if element.type == '4W':
-            element.fasttag.balance -= 100
-        else:
-            element.fasttag.balance -= 50
-
-        print(f'Toll Deducted')        
-        print(f'New FastTag Balance for {element.registration_number} \u20b9{element.fasttag.balance}')  
-
-        self.delete()
-
-    def delete(self):
-        self.size -= 1
-        self.head = self.head.next
-        print(f'Vehicle Removed from Queue. Size {self.size}')
-
-    def delete(self):
-        self.size -= 1
-        self.tail = self.tail.previous
-        print(f'Vehicle Removed from Stack. Size {self.size}')
+class Vehicle: 
     
-    def show(self, traverse=True):
-        
-        if traverse == True:
-        
-            element = self.head
+    def __init__(self, registration_number, type, fasttag):
+        self.registration_number = registration_number 
+        self.type = type
+        self.fasttag = fasttag
+        # self.next = None
+        # self.previous = None
 
-            while True:
-                element.show()
-                element = element.next
+    def show(self):
+        print('~~~~~~~~~~~VEHICLE~~~~~~~~~~~~~')
+        print(f'{self.registration_number} | {self.type}') # formatted string
 
-                if element == self.head:
-                    break
-        
-        else:
 
-            element = self.tail
+        # data = vars(self) # vars(self) -> data of obect in dictionary format
+        print('{registration_number} | {type}'.format_map(vars(self)))
 
-            while True:
-                element.show()
-                element = element.previous
+        self.fasttag.show()
 
-                if element == self.tail:
-                    break
-
-    
+        # print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n')
+        print('~'*30 +'\n')

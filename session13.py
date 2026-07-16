@@ -2,11 +2,12 @@
 from pymongo import MongoClient
 from pymongo.server_api import ServerApi
 
+
 class DBHelper:
 
-    def __init__(self, db_name='xx'):
-        username = 'xx'
-        password = 'xx'
+    def __init__(self, db_name='x'):
+        username = 'x'
+        password = 'x'
         uri = f"mongodb+srv://{username}:{password}@cluster0.eh8zx.gcp.mongodb.net/?appName=Cluster0"
         self.client = MongoClient(uri, server_api=ServerApi('1'))
         self.db = self.client[db_name]

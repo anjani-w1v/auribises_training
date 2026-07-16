@@ -1,48 +1,19 @@
-# import streamlit as st
+import datetime
 
-# st.set_page_config(page_title='Agentic chat UI')
-# st.subheader('Write a task to delegate')
+user_input = 'create task: Create 3 liceneses for finlo, Create licenses on immediate basis for Jujhar Group for bus ticketing, call, Gourav, 9915571177'
+data1 = user_input.split(':')
+print(data1)
+data2 = data1[1].split(',')
+print(data2)
 
-# task_clues = {
-#     'how to create a task': 'create task: title, descriptin, action(call etc), contact_name, contact_phone',
-#     'how to view task': 'list all tasks',
-#     'how to update task': 'update task: title, descriptin, action(call etc), contact_name, contact_phone',
-#     'how to delete task': 'delete tasks: title',
-# }
+task = {
+    'title': data2[0].strip(),
+    'description': data2[1].strip(),
+    'action': data2[2].strip(),
+    'contact_name': data2[3].strip(),
+    'contact_phone': data2[4].strip(),
+    'status': 'PENDING',
+    'created_at': datetime.datetime.now()
+}
 
-# if 'messages' not in st.session_state:
-#     st.session_state.messages = []
-
-# user_input=st.chat_input('Type your task here')
-
-# if user_input:
-
-#     message = {
-#         'role': 'user',
-#         'content': user_input
-#     }
-
-#     st.session_state.messages.append(message)
-
-#     with st.chat_message(message['role']):
-#             st.markdown(['content'])
-
-#     if user_input in task_clues:
-#         clue = task_clues(user_input)
-
-#         message = {
-#         'role': 'assistant',
-#         'content': clue
-#         }
-#         st.session_state.messages.append(message)
-
-#         with st.chat_message(message['role']):
-#             st.markdown(['content'])
-#     else:
-#         message = {
-#         'role': 'assistant',
-#         'content': 'Sorry, I cannot Help You'
-#         }
-#         st.session_state.messages.append(message)
-#         with st.chat_message(message['role']):
-#             st.markdown(['content'])
+print(task)
